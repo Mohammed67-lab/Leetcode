@@ -39,10 +39,7 @@ def one_pass(nums, target):
         # If the complement value is not present in the 'required_number_dict' add it
         if value not in required_number_dict:
             required_number_dict[number] = index
-            print (required_number_dict)
         else:
-            # if complement value is present return indices
-            print([nums.index(value), index])
             return [nums.index(value), index]
     
 
