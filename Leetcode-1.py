@@ -26,3 +26,26 @@ def twoSum_bruteforce(nums, target):
                 # If addition of 2 numbers gives target return indices of each number
                 if first_number + second_number == target:
                     return[index,sindex]
+
+
+# One Pass Approach - Uses 0(n) Complexity
+def one_pass(nums, target):
+
+    # Initialize an empty dictionary to store numbers encountered so far along with their indices
+    required_number_dict = {}
+
+    for index , number in enumerate(nums):
+        value = target - nums[index]
+        # If the complement value is not present in the 'required_number_dict' add it
+        if value not in required_number_dict:
+            required_number_dict[number] = index
+            print (required_number_dict)
+        else:
+            # if complement value is present return indices
+            print([nums.index(value), index])
+            return [nums.index(value), index]
+    
+
+        
+
+
